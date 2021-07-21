@@ -7,7 +7,7 @@ class Landing extends Component {
   render() {
     const { loading } = this.props;
     return (
-      <div className="container">
+      <div className="container" style={{flex:1,marginTop:"-3rem"}}>
         <SearchForm></SearchForm>
         {loading ? <Spinner /> : <MoviesContainer />}
       </div>

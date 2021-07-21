@@ -12,7 +12,7 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <div>
+        <div style={{overflowX:"hidden",height:"100vh",display:"flex",flexDirection:"column"}}>
           <NavBar></NavBar>
           <Route exact path="/" component={Landing} />
           <Route exact path="/movie/:id" component={Movie} />

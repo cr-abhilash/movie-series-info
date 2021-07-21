@@ -6,6 +6,7 @@ import {
 } from "../../actions/searchAction";
 import { connect } from "react-redux";
 import { SEARCH_MOVIE } from "../../actions/actions";
+import {isMobile} from 'react-device-detect';
 
 class SearchForm extends Component {
   onChange = (e) => {
@@ -21,21 +22,31 @@ class SearchForm extends Component {
     return (
       <div className="jumbotron jumbotron-fluid mt-5 text-center">
         <div className="container">
-          <h1 className="display-4 mb-3">
+          {!isMobile?<h1 className="display-4 mb-3">
             <i className="fa fa-search" /> Search for a movie ,TV series ..
-          </h1>
-          <form id="searchForm" onSubmit={this.onSubmit}>
-            <input
+          </h1>:null}
+          {/* <form id="searchForm" onSubmit={this.onSubmit}> */}
+          {isMobile?<div className="main">
+            <div className="form-group">
+              <span className="fa fa-search form-control-icon" ></span>
+              <input
+                type="text"
+                className="form-control"
+                name="searchText"
+                placeholder="Search Movies, TV Series ..."
+                onChange={this.onChange}
+              />
+            </div></div>:<input
               type="text"
               className="form-control"
               name="searchText"
               placeholder="Search Movies, TV Series ..."
               onChange={this.onChange}
-            />
-            <button type="submit" className="btn btn-primary btn-bg mt-3">
+            />}
+            <button onClick={this.onSubmit} className="btn btn-primary btn-bg mt-3">
               Search
             </button>
-          </form>
+          
         </div>
       </div>
     );

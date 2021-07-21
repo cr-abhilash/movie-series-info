@@ -12,7 +12,7 @@ class Movie extends Component {
   render() {
     const { loading, movie } = this.props;
     let movieInfo = (
-      <div className="container">
+      <div className="container" >
         <div className="row">
           <div className="col-md-4 card card-body">
             <img
@@ -72,7 +72,7 @@ class Movie extends Component {
     );
 
     let content = loading ? <Spinner /> : movieInfo;
-    return <div>{content}</div>;
+    return <div style={{flex:1}}>{content}</div>;
   }
 }
 const mapsStateToProp = (state) => ({
