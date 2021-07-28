@@ -29,9 +29,6 @@ class Movie extends Component {
               <li className="list-group-item">
                 <strong>Genre:</strong> {movie.Genre}
               </li>
-              {movie.Type==="series"?<li className="list-group-item">
-                <strong>Total Seasons:</strong> {movie.totalSeasons}
-              </li>:""}
               <li className="list-group-item">
                 <strong>Released:</strong> {movie.Released}
               </li>

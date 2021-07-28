@@ -35,6 +35,9 @@ class SearchForm extends Component {
                 name="searchText"
                 placeholder="Search Movies, TV Series ..."
                 onChange={this.onChange}
+                onKeyPress={(e)=>{
+                  console.log(e);
+                }}
               />
             </div></div>:<input
               type="text"

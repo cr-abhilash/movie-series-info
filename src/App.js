@@ -16,6 +16,7 @@ function App() {
           <NavBar></NavBar>
           <Route exact path="/" component={Landing} />
           <Route exact path="/movie/:id" component={Movie} />
+          <Route exact path="/series/:id" component={Movie} />
           <Fotter></Fotter>
         </div>
       </Router>
